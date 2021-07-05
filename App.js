@@ -1,21 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Weather } from './src/screens/Weather';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Weather App</Text>
+    <View style={{flex: 1}}>
       <StatusBar style="auto" />
+      <Weather />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

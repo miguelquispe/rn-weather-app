@@ -8,9 +8,11 @@ const screen = Dimensions.get('screen')
 export const Location = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.city}>Tokyo</Text>
-      <View style={{flex: 1}}>
-        <Text style={styles.country}>Shibuya {window.width * 1}</Text>
+      <View>
+        <Text style={styles.city}>Tokyo</Text>
+        <View style={{flex: 1}}>
+          <Text style={styles.country}>Shibuya</Text>
+        </View>
       </View>
     </View>
   )
@@ -19,20 +21,24 @@ export const Location = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#9FA8DA',
-    borderTopRightRadius: 200,
-    paddingTop: 36,
+    justifyContent: 'center',
+    flexDirection: 'column',
+    // paddingTop: 36,
+    // paddingBottom: 36,
     paddingLeft: 32,
-    height: 130
+    paddingRight: 32,
+    height: 130,
+    // backgroundColor: 'rgba(255,255,255,.5)'
   },
   city: {
     fontSize: 28,
     lineHeight: 32,
-    backgroundColor: 'blue'
+    marginBottom: 6,
+    color: '#fff'
   },
   country: {
     fontSize: 18,
     lineHeight: 22,
-    backgroundColor: 'orange'
+    color: '#fff'
   }
 })

@@ -5,6 +5,7 @@ export const ForecastItem = () => {
   return (
     <View style={styles.itemContainer}>
       <Text style={styles.text}>19:00</Text>
+      {/* Icon */}
       <Text style={styles.text}>12°</Text>
     </View>
   )
@@ -13,9 +14,12 @@ export const ForecastItem = () => {
 const styles = StyleSheet.create({
   itemContainer: {
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   text: {
     fontSize: 18,
+    lineHeight: 24,
+    color: '#fff'
   }
 })

@@ -6,7 +6,7 @@ import { Weather } from './src/screens/Weather';
 export default function App() {
   return (
     <View style={{flex: 1}}>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <Weather />
     </View>
   );

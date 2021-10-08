@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { NUNITO } from '../../constants/fonts'
+import { darkTheme } from '../../constants/theme'
 
 export const ForecastItem = () => {
   return (
@@ -22,6 +23,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: NUNITO.regular,
     lineHeight: 24,
-    color: '#fff'
+    color: darkTheme.gray
   }
 })

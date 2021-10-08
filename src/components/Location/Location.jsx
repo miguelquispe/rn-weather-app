@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Dimensions } from 'react-native'
 import { NUNITO } from '../../constants/fonts'
+import { darkTheme } from '../../constants/theme'
 
 const window = Dimensions.get('window')
 const screen = Dimensions.get('screen')
@@ -24,24 +25,21 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     flexDirection: 'column',
-    // paddingTop: 36,
-    // paddingBottom: 36,
     paddingLeft: 32,
     paddingRight: 32,
     height: 130,
-    // backgroundColor: 'rgba(255,255,255,.5)'
   },
   city: {
     fontSize: 28,
     fontFamily: NUNITO.regular,
     lineHeight: 32,
     marginBottom: 6,
-    color: '#fff'
+    color: darkTheme.text
   },
   country: {
     fontFamily: NUNITO.regular,
     fontSize: 18,
     lineHeight: 22,
-    color: '#fff'
+    color: darkTheme.gray
   }
 })

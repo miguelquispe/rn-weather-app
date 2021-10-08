@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, Dimensions } from 'react-native'
+import { NUNITO } from '../../constants/fonts'
 
 const window = Dimensions.get('window')
 const screen = Dimensions.get('screen')
@@ -32,11 +33,13 @@ const styles = StyleSheet.create({
   },
   city: {
     fontSize: 28,
+    fontFamily: NUNITO.regular,
     lineHeight: 32,
     marginBottom: 6,
     color: '#fff'
   },
   country: {
+    fontFamily: NUNITO.regular,
     fontSize: 18,
     lineHeight: 22,
     color: '#fff'

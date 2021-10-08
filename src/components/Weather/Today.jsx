@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import { NUNITO } from '../../constants/fonts';
 
 export const Today = () => {
   return (
@@ -10,7 +11,7 @@ export const Today = () => {
         </View>
         <View style={[styles.container, styles.state]}>
           <View style={[styles.container, styles.row, {flexShrink: 1, alignItems: 'flex-end'}]}>
-            <Text style={styles.stateText}>Sunny</Text>
+            <Text style={styles.stateText}>Clear</Text>
           </View>
           <View style={[styles.container, styles.row, {flexShrink: 1, alignItems: 'flex-start'}]}>
             <Text style={styles.stateText}>High pollen</Text>
@@ -35,7 +36,8 @@ const styles = StyleSheet.create({
     padding: 0,
     margin: 0,
     fontSize: 112,
-    letterSpacing: -5,
+    fontFamily: NUNITO.light,
+    letterSpacing: -10,
     includeFontPadding: false,
     color: '#fff',
   },
@@ -45,6 +47,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20
   },
   stateText: {
+    fontFamily: NUNITO.regular,
     fontSize: 18,
     lineHeight: 24,
     color: '#fff'

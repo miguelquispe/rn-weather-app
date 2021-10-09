@@ -1,20 +1,17 @@
 import React from 'react'
 import { StyleSheet, Text, View, Dimensions } from 'react-native'
+import { LOCATION } from '../../constants/dummy'
 import { NUNITO } from '../../constants/fonts'
 import { darkTheme } from '../../constants/theme'
 import IconPin from '../../icons/IconPin'
 
-const window = Dimensions.get('window')
-const screen = Dimensions.get('screen')
-
-
 export const Location = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.city}>Tokyo</Text>
+      <Text style={styles.city}>{LOCATION.city}</Text>
       <View style={{flexDirection: 'row', alignItems:'center'}}>
         <IconPin/>
-        <Text style={styles.country}>Shibuya</Text>
+        <Text style={styles.country}>{LOCATION.district}</Text>
       </View>
     </View>
   )

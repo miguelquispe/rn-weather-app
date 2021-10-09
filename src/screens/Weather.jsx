@@ -3,6 +3,7 @@ import { Dimensions, ImageBackground, StyleSheet, Text, View } from 'react-nativ
 import { ForecastItem } from '../components/Forecast/ForecastItem';
 import { Location } from '../components/Location/Location';
 import { Today } from '../components/Weather/Today';
+import { FORECAST } from '../constants/dummy';
 
 const {height, width} = Dimensions.get('window');
 const cityImg = {uri: 'https://picsum.photos/375/812'}
@@ -17,8 +18,8 @@ export const Weather = () => {
           <Today />
           <View style={[styles.forecast]}>
             {
-              Array.from({length: 4}).map(index => (
-                <ForecastItem key={index} />
+              FORECAST.map((item, index) => (
+                <ForecastItem hour={item.hour} temp={item.temp} key={index} />
               ))
             }
           </View>

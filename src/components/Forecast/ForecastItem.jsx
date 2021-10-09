@@ -2,13 +2,18 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { NUNITO } from '../../constants/fonts'
 import { darkTheme } from '../../constants/theme'
+import IconMoon from '../../icons/IconMoon'
 
-export const ForecastItem = () => {
+export const ForecastItem = (props) => {
+  const {hour="19:00", temp="12"} = props;
+
   return (
     <View style={styles.itemContainer}>
-      <Text style={styles.text}>19:00</Text>
-      {/* Icon */}
-      <Text style={styles.text}>12°</Text>
+      <Text style={styles.text}>{hour}</Text>
+      <View style={{marginVertical: 10}}>
+        <IconMoon />
+      </View>
+      <Text style={styles.text}>{`${temp}°`}</Text>
     </View>
   )
 }

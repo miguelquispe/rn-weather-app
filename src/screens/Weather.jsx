@@ -4,7 +4,6 @@ import { ForecastItem } from '../components/Forecast/ForecastItem';
 import { Location } from '../components/Location/Location';
 import { Today } from '../components/Weather/Today';
 
-
 const {height, width} = Dimensions.get('window');
 const cityImg = {uri: 'https://picsum.photos/375/812'}
 

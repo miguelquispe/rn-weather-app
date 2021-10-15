@@ -9,3 +9,8 @@ export const darkTheme = {
   gray: '#D2D5DB',
   background: '#212E3E'
 }
+
+export const ThemeStyle = {
+  light: lightTheme,
+  dark: darkTheme
+}

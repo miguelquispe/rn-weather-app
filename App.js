@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { View } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import { useFonts, Nunito_300Light, Nunito_400Regular } from '@expo-google-fonts/nunito';
 import AppLoading from 'expo-app-loading';
 import { Weather } from './src/screens/Weather';
+import { ThemeProvider } from './src/context/Theme';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -15,10 +16,12 @@ export default function App() {
     return <AppLoading />
   } else {
     return (
-      <View style={{flex: 1}}>
-        <StatusBar style="light" />
-        <Weather />
-      </View>
+      <ThemeProvider>
+        <SafeAreaView style={{flex: 1}}>
+          <StatusBar style="light" />
+          <Weather />
+        </SafeAreaView>
+      </ThemeProvider>
     );
   }
 

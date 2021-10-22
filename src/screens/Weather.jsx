@@ -1,13 +1,15 @@
+import { StatusBar } from 'expo-status-bar';
 import React, { useContext } from 'react';
 import { Dimensions, ImageBackground, StyleSheet, Switch, Text, View } from 'react-native';
 import { ForecastItem } from '../components/Forecast/ForecastItem';
 import { Location } from '../components/Location/Location';
+import { ToggleTheme } from '../components/Shared/ToggleTheme';
 import { Today } from '../components/Weather/Today';
 import { FORECAST } from '../constants/dummy';
 import { ThemeStyle } from '../constants/theme';
 import { ThemeContext } from '../context/Theme';
 
-const {height, width} = Dimensions.get('window');
+const {height} = Dimensions.get('window');
 const cityImg = {uri: 'https://picsum.photos/375/812'}
 
 export const Weather = () => {
@@ -20,14 +22,12 @@ export const Weather = () => {
   const Styles = createStyles(theme);
  
   return (
+    <React.Fragment>
+    <StatusBar backgroundColor={ThemeStyle[theme].background} style={theme === 'dark' ? 'light' : 'dark'} />
     <View style={{flex: 1}}>
       <ImageBackground source={cityImg} resizeMode="cover" style={Styles.bg}>
-        <View style={{flex: 1, justifyContent: 'flex-end', alignContent:'flex-start', alignItems: 'flex-start',flexDirection: 'row', paddingVertical: 30, paddingHorizontal: 30}}>
-          <Text>LIGHT</Text>
-          <Switch value={theme === 'dark'} onValueChange={handleSwitchChange} />
-          <Text>DARK</Text>
-        </View>
-        <View style={{height: height * .6, position: "relative"}}>
+        <ToggleTheme handleValueChange={handleSwitchChange} />
+        <View style={{height: height * .6, position: "relative", overflow: "hidden"}}>
           <View style={{flex: 1, zIndex: 2, elevation: 2}}>
           <Location />
           <Today />
@@ -43,6 +43,7 @@ export const Weather = () => {
         </View>
       </ImageBackground>
     </View>
+    </React.Fragment>
   )
 }
 
@@ -56,7 +57,7 @@ const createStyles = (theme) => {
   const styles = StyleSheet.create({
     bg: {
       flex: 1,
-      justifyContent: 'flex-end'
+      justifyContent:'space-between'
     },
     circle: {
       position: "absolute",

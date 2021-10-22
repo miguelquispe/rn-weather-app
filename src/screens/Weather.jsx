@@ -10,7 +10,7 @@ import { ThemeStyle } from '../constants/theme';
 import { ThemeContext } from '../context/Theme';
 
 const {height} = Dimensions.get('window');
-const cityImg = {uri: 'https://picsum.photos/375/812'}
+// const cityImg = {uri: 'https://picsum.photos/375/812'}
 
 export const Weather = () => {
   const {theme, toggleTheme} = useContext(ThemeContext);
@@ -25,7 +25,7 @@ export const Weather = () => {
     <React.Fragment>
     <StatusBar backgroundColor={ThemeStyle[theme].background} style={theme === 'dark' ? 'light' : 'dark'} />
     <View style={{flex: 1}}>
-      <ImageBackground source={cityImg} resizeMode="cover" style={Styles.bg}>
+      <ImageBackground source={require('../../assets/images/tokyo.jpg')} resizeMode="stretch" style={Styles.bg}>
         <ToggleTheme handleValueChange={handleSwitchChange} />
         <View style={{height: height * .6, position: "relative", overflow: "hidden"}}>
           <View style={{flex: 1, zIndex: 2, elevation: 2}}>
@@ -78,3 +78,5 @@ const createStyles = (theme) => {
 
   return styles;
 };
+// 
+      // 
